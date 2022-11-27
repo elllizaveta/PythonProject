@@ -211,7 +211,7 @@ def game_loop():
 	FPS = 24
 
 	# фон
-	font = pygame.font.Font('Fonts/Alternity-8w7J.ttf', 50)
+	font = pygame.font.Font('Alternity-8w7J.ttf', 50)
 	font2 = pygame.font.SysFont('cursive', 25)
 
 	running = True
