@@ -13,10 +13,10 @@ WHITE = (255, 255, 255)
 
 # картиночки
 
-img1 = pygame.image.load('Assets/1.png')
-img2 = pygame.image.load('Assets/2.png')
-img3 = pygame.image.load('Assets/3.png')
-img4 = pygame.image.load('Assets/4.png')
+img1 = pygame.image.load('1.png')
+img2 = pygame.image.load('2.png')
+img3 = pygame.image.load('3.png')
+img4 = pygame.image.load('4.png')
 
 Assets = {
 	1 : img1,
