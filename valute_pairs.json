@@ -1,0 +1,170 @@
+{
+  "BCH": {
+    "pair": "BCHRUB",
+    "valute": "BCH",
+    "reversed_pair": false,
+    "ru_name": "empty"
+  },
+  "BTC": {
+    "pair": "BTCRUB",
+    "valute": "BTC",
+    "reversed_pair": false,
+    "ru_name": "empty"
+  },
+  "BYN": {
+    "pair": "BYNRUB",
+    "valute": "BYN",
+    "reversed_pair": false,
+    "ru_name": "empty"
+  },
+  "CAD": {
+    "pair": "CADRUB",
+    "valute": "CAD",
+    "reversed_pair": false,
+    "ru_name": "empty"
+  },
+  "CHF": {
+    "pair": "CHFRUB",
+    "valute": "CHF",
+    "reversed_pair": false,
+    "ru_name": "empty"
+  },
+  "CNY": {
+    "pair": "CNYRUB",
+    "valute": "CNY",
+    "reversed_pair": false,
+    "ru_name": "empty"
+  },
+  "ETH": {
+    "pair": "ETHRUB",
+    "valute": "ETH",
+    "reversed_pair": false,
+    "ru_name": "empty"
+  },
+  "EUR": {
+    "pair": "EURRUB",
+    "valute": "EUR",
+    "reversed_pair": false,
+    "ru_name": "empty"
+  },
+  "GBP": {
+    "pair": "GBPRUB",
+    "valute": "GBP",
+    "reversed_pair": false,
+    "ru_name": "empty"
+  },
+  "GEL": {
+    "pair": "GELRUB",
+    "valute": "GEL",
+    "reversed_pair": false,
+    "ru_name": "empty"
+  },
+  "GPY": {
+    "pair": "JPYRUB",
+    "valute": "GPY",
+    "reversed_pair": false,
+    "ru_name": "empty"
+  },
+  "LKR": {
+    "pair": "LKRRUB",
+    "valute": "LKR",
+    "reversed_pair": false,
+    "ru_name": "empty"
+  },
+  "MOL": {
+    "pair": "MDLRUB",
+    "valute": "MOL",
+    "reversed_pair": false,
+    "ru_name": "empty"
+  },
+  "MMK": {
+    "pair": "MMKRUB",
+    "valute": "MMK",
+    "reversed_pair": false,
+    "ru_name": "empty"
+  },
+  "RSD": {
+    "pair": "RSDRUB",
+    "valute": "RSD",
+    "reversed_pair": false,
+    "ru_name": "empty"
+  },
+  "AED": {
+    "pair": "RUBAED",
+    "valute": "AED",
+    "reversed_pair": true,
+    "ru_name": "empty"
+  },
+  "AMD": {
+    "pair": "RUBAMD",
+    "valute": "AMD",
+    "reversed_pair": true,
+    "ru_name": "empty"
+  },
+  "AUD": {
+    "pair": "RUBAUD",
+    "valute": "AUD",
+    "reversed_pair": true,
+    "ru_name": "empty"
+  },
+  "BGN": {
+    "pair": "RUBBGN",
+    "valute": "BGN",
+    "reversed_pair": true,
+    "ru_name": "empty"
+  },
+  "KZT": {
+    "pair": "RUBKZT",
+    "valute": "KZT",
+    "reversed_pair": true,
+    "ru_name": "empty"
+  },
+  "MYR": {
+    "pair": "RUBMYR",
+    "valute": "MYR",
+    "reversed_pair": true,
+    "ru_name": "empty"
+  },
+  "NZD": {
+    "pair": "RUBNZD",
+    "valute": "NZD",
+    "reversed_pair": true,
+    "ru_name": "empty"
+  },
+  "SGD": {
+    "pair": "RUBSGD",
+    "valute": "SGD",
+    "reversed_pair": true,
+    "ru_name": "empty"
+  },
+  "TRY": {
+    "pair": "RUBTRY",
+    "valute": "TRY",
+    "reversed_pair": true,
+    "ru_name": "empty"
+  },
+  "UAH": {
+    "pair": "RUBUAH",
+    "valute": "UAH",
+    "reversed_pair": true,
+    "ru_name": "empty"
+  },
+  "THB": {
+    "pair": "THBRUB",
+    "valute": "THB",
+    "reversed_pair": false,
+    "ru_name": "empty"
+  },
+  "USD": {
+    "pair": "USDRUB",
+    "valute": "USD",
+    "reversed_pair": false,
+    "ru_name": "empty"
+  },
+  "XRP": {
+    "pair": "XRPRUB",
+    "valute": "XRP",
+    "reversed_pair": false,
+    "ru_name": "empty"
+  }
+}
