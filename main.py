@@ -1,6 +1,7 @@
 import pygame
 import pygame_menu
 import random
+from Globals import Globals
 
 pygame.init()
 
@@ -13,10 +14,10 @@ WHITE = (255, 255, 255)
 
 # картиночки
 
-img1 = pygame.image.load('1.png')
-img2 = pygame.image.load('2.png')
-img3 = pygame.image.load('3.png')
-img4 = pygame.image.load('4.png')
+img1 = pygame.image.load('Assets/1.png')
+img2 = pygame.image.load('Assets/2.png')
+img3 = pygame.image.load('Assets/3.png')
+img4 = pygame.image.load('Assets/4.png')
 
 Assets = {
 	1 : img1,
@@ -37,16 +38,12 @@ pygame.display.set_caption('game by Liza')
 default_player_name = True
 
 def set_player_name(name):
-    global player_name
-    global default_player_name
-    player_name = name
-    default_player_name = False
+    Globals.player_name = name
+    Globals.default_player_name = False
 
 def set_default_player_name():
-    global player_name
-    global default_player_name
-    player_name = "Guest"
-    default_player_name = False 
+    Globals.player_name = "Guest"
+    Globals.default_player_name = False
 
 
 def show_start_screen():
@@ -110,11 +107,6 @@ class Figures:
 
 
 # сама игрулька
-SCREEN = WIDTH, HEIGHT = 300, 480
-SIZE = 20
-ROWS = (HEIGHT-120) // SIZE
-COLS = WIDTH // SIZE
-
 class Tetris:
 	def __init__(self, rows, cols):
 		self.rows = rows
@@ -128,9 +120,9 @@ class Tetris:
 
 	def draw_grid(self):
 		for i in range(self.rows+1):
-			pygame.draw.line(win, WHITE, (0, SIZE*i), (WIDTH, SIZE*i))
+			pygame.draw.line(win, WHITE, (0, Globals.SIZE*i), (Globals.WIDTH, Globals.SIZE*i))
 		for j in range(self.cols):
-			pygame.draw.line(win, WHITE, (SIZE*j, 0), (SIZE*j, HEIGHT-120))
+			pygame.draw.line(win, WHITE, (Globals.SIZE*j, 0), (Globals.SIZE*j, Globals.HEIGHT-120))
 
 	def new_figure(self):
 		if not self.next:
@@ -205,13 +197,13 @@ class Tetris:
 		
 
 def game_loop():
-	win = pygame.display.set_mode(SCREEN, pygame.NOFRAME)
+	win = pygame.display.set_mode(Globals.SCREEN, pygame.NOFRAME)
 
 	clock = pygame.time.Clock()
 	FPS = 24
 
 	# фон
-	font = pygame.font.Font('Alternity-8w7J.ttf', 50)
+	font = pygame.font.Font('Fonts/Alternity-8w7J.ttf', 50)
 	font2 = pygame.font.SysFont('cursive', 25)
 
 	running = True
@@ -219,7 +211,7 @@ def game_loop():
 	move_down = False
 	can_move = True
 
-	tetris = Tetris(ROWS, COLS)
+	tetris = Tetris(Globals.ROWS, Globals.COLS)
 	while running:
 		win.fill(BLACK)
 
@@ -255,7 +247,7 @@ def game_loop():
 						tetris.go_space()
 
 				if event.key == pygame.K_r:
-					tetris.__init__(ROWS, COLS)
+					tetris.__init__(Globals.ROWS, Globals.COLS)
 
 				if event.key == pygame.K_p:
 					can_move = not can_move
@@ -268,24 +260,24 @@ def game_loop():
 					move_down = False
 
 		# отрисовочка детальки
-		for x in range(ROWS):
-			for y in range(COLS):
+		for x in range(Globals.ROWS):
+			for y in range(Globals.COLS):
 				if tetris.board[x][y] > 0:
 					val = tetris.board[x][y]
 					img = Assets[val]
-					win.blit(img, (y*SIZE, x*SIZE))
-					pygame.draw.rect(win, WHITE, (y*SIZE, x*SIZE,
-										SIZE, SIZE), 1)
+					win.blit(img, (y*Globals.SIZE, x*Globals.SIZE))
+					pygame.draw.rect(win, WHITE, (y*Globals.SIZE, x*Globals.SIZE,
+										Globals.SIZE, Globals.SIZE), 1)
 
 		if tetris.figure:
 			for i in range(4):
 				for j in range(4):
 					if i * 4 + j in tetris.figure.image():
 						img = Assets[tetris.figure.color]
-						x = SIZE * (tetris.figure.x + j)
-						y = SIZE * (tetris.figure.y + i)
+						x = Globals.SIZE * (tetris.figure.x + j)
+						y = Globals.SIZE * (tetris.figure.y + i)
 						win.blit(img, (x, y))
-						pygame.draw.rect(win, WHITE, (x, y, SIZE, SIZE), 1)
+						pygame.draw.rect(win, WHITE, (x, y, Globals.SIZE, Globals.SIZE), 1)
 
 		# конец игры
 
@@ -296,22 +288,22 @@ def game_loop():
 
 	    # переотрисовка
 
-		pygame.draw.rect(win, BLUE, (0, HEIGHT-120, WIDTH, 120))
+		pygame.draw.rect(win, BLUE, (0, Globals.HEIGHT-120, Globals.WIDTH, 120))
 		if tetris.next:
 			for i in range(4):
 				for j in range(4):
 					if i * 4 + j in tetris.next.image():
 						img = Assets[tetris.next.color]
-						x = SIZE * (tetris.next.x + j - 4)
-						y = HEIGHT - 100 + SIZE * (tetris.next.y + i)
+						x = Globals.SIZE * (tetris.next.x + j - 4)
+						y = Globals.HEIGHT - 100 + Globals.SIZE * (tetris.next.y + i)
 						win.blit(img, (x, y))
 
 		scoreimg = font.render(f'{tetris.score}', True, WHITE)
 		levelimg = font2.render(f'Level : {tetris.level}', True, WHITE)
-		win.blit(scoreimg, (250-scoreimg.get_width()//2, HEIGHT-110))
-		win.blit(levelimg, (250-levelimg.get_width()//2, HEIGHT-30))
+		win.blit(scoreimg, (250-scoreimg.get_width()//2, Globals.HEIGHT-110))
+		win.blit(levelimg, (250-levelimg.get_width()//2, Globals.HEIGHT-30))
 
-		pygame.draw.rect(win, BLUE, (0, 0, WIDTH, HEIGHT-120), 2)
+		pygame.draw.rect(win, BLUE, (0, 0, Globals.WIDTH, Globals.HEIGHT-120), 2)
 		clock.tick(FPS)
 		pygame.display.update()
 
