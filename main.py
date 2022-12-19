@@ -117,12 +117,15 @@ def set_val(message: telebot.types.Message):
     if user['waiting_for'] == 'None':
         bot.reply_to(message, "Слэш то хоть поставь, я ж глупый - без слэша не понимаю\n пысы. слэш - это палка наклонная")
     else:
-        count = float(message.text.replace(',', '.'))
-        add_valute(str(message.from_user.id), user["waiting_for"], count)
-        user["waiting_for"] = "None"
-        save_users()
-        bot.reply_to(message, "Успешно добавлено")
-
+        message_user = message.text.replace(',', '.')
+        if message_user.isdigit():
+            count = float(message.text.replace(',', '.'))
+            add_valute(str(message.from_user.id), user["waiting_for"], count)
+            user["waiting_for"] = "None"
+            save_users()
+            bot.reply_to(message, "Успешно добавлено")
+        else:
+            bot.reply_to(message, "чел ты\nпопросили же цифру нормально")
 
 def json_lol():
     a = dict(json.loads(open("valute_pairs.json", "r").read()))
